@@ -82,7 +82,7 @@ module.exports = function(grunt) {
                     src : [
                     'dist/css/style.css',
                     'dist/js/main.min.js',
-                    '/src/**/*.html',
+                    'dist/**/*.html',
                     ]
                 }, //bsfiles
             }, //dev
