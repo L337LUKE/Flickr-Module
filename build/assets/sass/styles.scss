@@ -29,8 +29,8 @@
 /*-------------------------------------------------------------/*
     FRAMEWORK
 /*-------------------------------------------------------------*/
-@import 'framework/bourbon/bourbon',
-        'framework/neat/neat';
+@import '_framework/bourbon/bourbon',
+        '_framework/neat/neat';
 
 /*-------------------------------------------------------------/*
     CONFIG
@@ -45,25 +45,25 @@
 /*-------------------------------------------------------------/*
     BASE
 /*-------------------------------------------------------------*/
-@import 'theme/_base/reset',
-        'theme/_base/typography';
+@import '_theme/base/reset',
+        '_theme/base/typography';
 
 /*-------------------------------------------------------------/*
     LAYOUT
 /*-------------------------------------------------------------*/
-@import 'theme/_layout/header';
+@import '_theme/layout/header';
 
 /*-------------------------------------------------------------/*
     _modules
 /*-------------------------------------------------------------*/
-@import 'theme/_modules/flickr_pagination',
-        'theme/_modules/flickr_carousel',
-        'theme/_modules/flickr_search',
-        'theme/_modules/flickr_social',
-        'theme/_modules/flickr_gallery';
+@import '_theme/modules/flickr_pagination',
+        '_theme/modules/flickr_carousel',
+        '_theme/modules/flickr_search',
+        '_theme/modules/flickr_social',
+        '_theme/modules/flickr_gallery';
 
 /*-------------------------------------------------------------/*
     _state
 /*-------------------------------------------------------------*/
 
-@import "theme/_state/media-queries";
+@import "_theme/state/media-queries";
