@@ -1,0 +1,21 @@
+body, html {
+    background-color: $site-background;
+}
+
+.page-strip {
+    width: 100%;
+    position: absolute;
+    background-color: $site-alt;
+    z-index: -100;
+    top: 0;
+    max-height: 16.875em;
+}
+    .page-strip__inner {
+        padding: 15% 0;
+    }
+
+@media screen and (min-width: 37.5em) {
+        .page-strip__inner {
+            padding: 10% 0;
+        }
+}

@@ -16,6 +16,7 @@
 * Typography..................Setup for typography
 *
 * LAYOUT
+* Site wide...................Styles to apply across site
 * Header......................Top level header area
 *
 * MODULES
@@ -45,13 +46,14 @@
 /*-------------------------------------------------------------/*
     BASE
 /*-------------------------------------------------------------*/
-@import '_theme/base/reset',
+@import '../../components/normalize.css/normalize',
         '_theme/base/typography';
 
 /*-------------------------------------------------------------/*
     LAYOUT
 /*-------------------------------------------------------------*/
-@import '_theme/layout/header';
+@import '_theme/layout/site-wide',
+        '_theme/layout/header';
 
 /*-------------------------------------------------------------/*
     _modules
