@@ -1,0 +1,24 @@
+{
+  "name": "FlickrModule",
+  "version": "1.0.0",
+  "homepage": "git@github.com:L337LUKE/Flickr-Module.git",
+  "authors": [
+    "luke@lukeroberts.me"
+  ],
+  "description": "Bower for flickr module",
+  "main": "dist/css/style.css",
+  "keywords": [
+    "Flickr Module"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "normalize.css": "~3.0.2"
+  },
+  "devDependencies": {}
+}
