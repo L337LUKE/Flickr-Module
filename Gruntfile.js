@@ -36,7 +36,7 @@ module.exports = function(grunt) {
             dist: {
                 options: {
                     // nested, compact, compressed, expanded.
-                    style: 'compressed',
+                    style: 'expanded',
                     noCache: true,
                 }, //options
                 files: [{
@@ -58,6 +58,22 @@ module.exports = function(grunt) {
             flatten: true,
             filter: 'isFile',
           },
+          images: {
+            expand: true,
+            cwd: 'build/assets/images/',
+            src: ['*.png', '*.jpg'],
+            dest: 'dist/img/',
+            flatten: true,
+            filter: 'isFile',
+          },
+          scripts: {
+            expand: true,
+            cwd: 'build/assets/js/',
+            src: ['*.js'],
+            dest: 'dist/js/',
+            flatten: true,
+            filter: 'isFile',
+          }
         },        // Watch command to detect file changes and refresh the browser
         watch: {
             configFiles: {
@@ -72,16 +88,16 @@ module.exports = function(grunt) {
                 tasks: ['concat', 'jshint', 'uglify']
             }, //scripts
             copy: {
-              files: ['build/*.html'],
-              tasks: ['copy:main']
+              files: ['build/*.html', 'build/assets/js/main.js'],
+              tasks: ['copy:main', 'copy:scripts']
             },
         }, //watch
         browserSync: {
             dev: {
                 bsFiles: {
                     src : [
-                    'dist/css/style.css',
-                    'dist/js/main.min.js',
+                    'dist/**/*.css',
+                    'dist/js/*.js',
                     'dist/**/*.html',
                     ]
                 }, //bsfiles
@@ -89,12 +105,11 @@ module.exports = function(grunt) {
             options: {
                 watchTask: true,
                 proxy: 'flickr.dev',
-                host: 'localhost',
-                online: false
+                host: 'localhost'
             } //options
         }, //browserSync
-
     });
     require('load-grunt-tasks')(grunt);
     grunt.registerTask('default', ['browserSync', 'watch']);
+    grunt.registerTask('copyimg', ['copy:images']);
 };
