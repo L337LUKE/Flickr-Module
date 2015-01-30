@@ -1,3 +1,35 @@
+.flickr-carousel {
+    position: relative;
+    z-index: 100;
+}
+
+    .flickr-carousel__wrapper {
+        @include outer-container(61.25em);
+        @include pad(0 default);
+    }
+
+        .flickr-carousel__list {
+            list-style: none;
+            padding: 0;
+        }
+
+            .flickr-carousel__item {
+
+            }
+
+                .flickr-carousel__image {
+                    max-width: 100%;
+                    width: 100%;
+                }
+
+        .flickr-carousel__controls {}
+
+            .flickr-carousel__control {}
+
+            .flickr-icon__left {}
+
+                .flickr-carousel__screen-readers {}
+
 // 1x
 .sprite-left-arrow-hover{ background-position: 0 0; width: 60px; height: 60px; }
 .sprite-left-arrow{ background-position: 0 -70px; width: 60px; height: 60px; }
