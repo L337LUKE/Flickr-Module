@@ -53,3 +53,10 @@ $default-feature: min-width; // Default @media feature for the breakpoint() mixi
 ///@type String
 
 $default-layout-direction: LTR !default;
+
+// ------------------------------------------------------------
+// Set Bourbon's flex-grid variables to match what Neat is doing
+// http://bourbon.io/docs/#flex-grid
+// ------------------------------------------------------------
+$fg-column: $column;
+$fg-gutter: $gutter;
