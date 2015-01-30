@@ -1,0 +1,27 @@
+.mast-head__inner {
+    @include outer-container(61.25em);
+    @include pad(1.0625em default 0 default);
+    text-align: center;
+}
+
+.logo {
+    color: $type-alt-colour;
+    font-family: serif, georgia, palatino;
+    font-size: 3.25em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+@media screen and (min-width: 37.5em) {
+    .mast-head__inner {
+        @include pad(2.1875em default 0 default);
+        text-align: left;
+    }
+
+    .logo {
+        font-size: 6.25em;
+        @include span-columns(5 of 12);
+    }
+}
