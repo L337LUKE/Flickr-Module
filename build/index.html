@@ -15,27 +15,160 @@
         <![endif]-->
 
         <header class="mast-head" role="banner">
-            <h1 class="logo">
-                <!-- change the alt/title based on logo being used -->
-                Photos
-            </h1>
+            <div class="mast-head__inner">
+                <h1 class="logo">Photos</h1>
+                <div class="flickr-search">
+                    <form  method="POST">
+                        <label class="flickr-search__label" for="flickr_search">Search</label>
+                        <input class="flickr-search__input" id="flickr_search" name="flickr_sarch" type="search" placeholder="search..." value="search..." />
+                    </form>
+                </div>
+            </div>
         </header>
 
         <main class="content" role="main">
-            <section class="carousel" aria-labelledby="Carousel of flickr pictures">
-
+            <section class="flickr-carousel" aria-labelledby="Carousel of big flickr images">
+                <div class="flickr-carousel__wrapper">
+                    <ul class="flickr-carousel__list">
+                        <li class="flickr-carousel__item">
+                            <img class="flickr-carousel__image" src="img/example-slider.jpg" alt="[alt for image]" title="[title for image]" />
+                        </li>
+                    </ul>
+                    <div class="flickr-carousel__controls">
+                        <i class="flickr-carousel__control  flickr-icon__left"><span class="flickr-carousel__screen-readers">Previous slide</span></i>
+                        <i class="flickr-carousel__control  flickr-icon__right"><span class="flickr-carousel__screen-readers">Next slide</span></i>
+                        <span></span>
+                    </div>
+                </div>
+                <span class="page-strip"><div class="page-strip__inner"></div></span>
             </section>
 
-            <section class="image-gallery" aria-labelledby="Flickr image gallery">
-                <!-- image gallery -->
+            <section class="flickr-gallery" aria-labelledby="Gallery of images pulled from flickr">
+                <!-- markup for each flickr gallery element
+                <ul class="flickr-gallery__list">
+                    <li class="flickr-gallery__item">
+                        <a href="[image link]" class="flickr-gallery__link" data-enlarge="[link for large version of image]">
+                            <img src="[image src]" alt="[image alt tag]" class="flickr-gallery__image"/>
+                        </a>
+                    </li>
+                </ul>
+                markup for each flickr gallery element -->
+
+                <ul class="flickr-gallery__list">
+                    <li class="flickr-gallery__item">
+                        <a href="" class="flickr-gallery__link" data-enlarge="">
+                            <img src="img/example-gallery-one.jpg" alt="[insert alt in loop]" title="[insert title in loop]" class="flickr-gallery__image"/>
+                        </a>
+                    </li>
+                    <li class="flickr-gallery__item">
+                        <a href="" class="flickr-gallery__link" data-enlarge="">
+                            <img src="img/example-gallery-two.jpg" alt="[insert alt in loop]" title="[insert title in loop]" class="flickr-gallery__image"/>
+                        </a>
+                    </li>
+                    <li class="flickr-gallery__item">
+                        <a href="" class="flickr-gallery__link" data-enlarge="">
+                            <img src="img/example-gallery-three.jpg" alt="[insert alt in loop]" title="[insert title in loop]" class="flickr-gallery__image"/>
+                        </a>
+                    </li>
+                    <li class="flickr-gallery__item">
+                        <a href="" class="flickr-gallery__link" data-enlarge="">
+                            <img src="img/example-gallery-one.jpg" alt="[insert alt in loop]" title="[insert title in loop]" class="flickr-gallery__image"/>
+                        </a>
+                    </li>
+                    <li class="flickr-gallery__item">
+                        <a href="" class="flickr-gallery__link" data-enlarge="">
+                            <img src="img/example-gallery-two.jpg" alt="[insert alt in loop]" title="[insert title in loop]" class="flickr-gallery__image"/>
+                        </a>
+                    </li>
+                    <li class="flickr-gallery__item">
+                        <a href="" class="flickr-gallery__link" data-enlarge="">
+                            <img src="img/example-gallery-three.jpg" alt="[insert alt in loop]" title="[insert title in loop]" class="flickr-gallery__image"/>
+                        </a>
+                    </li>
+                    <li class="flickr-gallery__item">
+                        <a href="" class="flickr-gallery__link" data-enlarge="">
+                            <img src="img/example-gallery-one.jpg" alt="[insert alt in loop]" title="[insert title in loop]" class="flickr-gallery__image"/>
+                        </a>
+                    </li>
+                    <li class="flickr-gallery__item">
+                        <a href="" class="flickr-gallery__link" data-enlarge="">
+                            <img src="img/example-gallery-two.jpg" alt="[insert alt in loop]" title="[insert title in loop]" class="flickr-gallery__image"/>
+                        </a>
+                    </li>
+                    <li class="flickr-gallery__item">
+                        <a href="" class="flickr-gallery__link" data-enlarge="">
+                            <img src="img/example-gallery-three.jpg" alt="[insert alt in loop]" title="[insert title in loop]" class="flickr-gallery__image"/>
+                        </a>
+                    </li>
+                    <li class="flickr-gallery__item">
+                        <a href="" class="flickr-gallery__link" data-enlarge="">
+                            <img src="img/example-gallery-two.jpg" alt="[insert alt in loop]" title="[insert title in loop]" class="flickr-gallery__image"/>
+                        </a>
+                    </li>
+                    <li class="flickr-gallery__item">
+                        <a href="" class="flickr-gallery__link" data-enlarge="">
+                            <img src="img/example-gallery-three.jpg" alt="[insert alt in loop]" title="[insert title in loop]" class="flickr-gallery__image"/>
+                        </a>
+                    </li>
+                    <li class="flickr-gallery__item">
+                        <a href="" class="flickr-gallery__link" data-enlarge="">
+                            <img src="img/example-gallery-one.jpg" alt="[insert alt in loop]" title="[insert title in loop]" class="flickr-gallery__image"/>
+                        </a>
+                    </li>
+                    <li class="flickr-gallery__item">
+                        <a href="" class="flickr-gallery__link" data-enlarge="">
+                            <img src="img/example-gallery-two.jpg" alt="[insert alt in loop]" title="[insert title in loop]" class="flickr-gallery__image"/>
+                        </a>
+                    </li>
+                    <li class="flickr-gallery__item">
+                        <a href="" class="flickr-gallery__link" data-enlarge="">
+                            <img src="img/example-gallery-three.jpg" alt="" class="flickr-gallery__image"/>
+                        </a>
+                    </li>
+                    <li class="flickr-gallery__item">
+                        <a href="" class="flickr-gallery__link" data-enlarge="">
+                            <img src="img/example-gallery-one.jpg" alt="" class="flickr-gallery__image"/>
+                        </a>
+                    </li>
+                </ul>
             </section>
 
         </main>
 
-        <nav class="pagination" role="navigation">
-
+        <nav class="flickr-pagination" role="navigation">
+            <ul class="flickr-pagination__list">
+                <li class="flickr-pagination__item">
+                    <a class="flickr-pagination__link flickr-pagination__first" href="">&lt;&lt;</a>
+                </li>
+                <li class="flickr-pagination__item">
+                    <a class="flickr-pagination__link flickr-pagination__prev" href="">&lt;</a>
+                </li>
+                <li class="flickr-pagination__item">
+                    <a class="flickr-pagination__link" href="">1</a>
+                </li>
+                <li class="flickr-pagination__item">
+                    <a class="flickr-pagination__link" href="">2</a>
+                </li>
+                <li class="flickr-pagination__item">
+                    <a class="flickr-pagination__link" href="">3</a>
+                </li>
+                <li class="flickr-pagination__item">
+                    <a class="flickr-pagination__link" href="">4</a>
+                </li>
+                <li class="flickr-pagination__item">
+                    <a class="flickr-pagination__link" href="">5</a>
+                </li>
+                <li class="flickr-pagination__item">
+                    <a class="flickr-pagination__link" href="">6</a>
+                </li>
+                <li class="flickr-pagination__item ">
+                    <a class="flickr-pagination__link flickr-pagination__next" href="">&gt;</a>
+                </li>
+                <li class="flickr-pagination__item">
+                    <a class="flickr-pagination__link flickr-pagination__last" href="">&gt;&gt;</a>
+                </li>
+            </ul>
         </nav>
-
 
         <script src="js/main.js"></script>
     </body>
