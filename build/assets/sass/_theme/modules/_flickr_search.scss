@@ -1,0 +1,57 @@
+.flickr-seach {
+    margin-top: 1em;
+}
+    .flickr-search__label {
+        @include screen-reader-text; // see mixins
+    }
+    .flickr-search__input {
+        /* Some initial reset code */
+        -webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+        -webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+        -moz-box-sizing:    content-box;
+        box-sizing:         content-box;
+
+        &::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+            -webkit-appearance: none;
+        }
+
+        &::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+            border: 0;
+            padding: 0;
+        }
+
+        color: $form--type;
+        border-radius: 0;
+        text-indent: 0.3125em;
+        padding: 0.5em 0;
+        border: 0.0625em solid $form--border;
+        @include transition(all, 250ms, ease-in-out);
+        text-align: left;
+        width: 100%;
+        background-image: url('../img/search.png');
+        background-repeat: no-repeat;
+        background-position: 97.5% center;
+        background-size: 20px;
+
+        @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi){
+            background-image: url('../img/search@2x.png');
+        }
+
+        &:focus {
+            outline: 0px;
+            color: $form--type;
+            border-color: $form--border;
+        }
+    }
+
+@media screen and (min-width: 37.5em) {
+    .flickr-search {
+        margin-top: 2.8125em;
+        @include span-columns(5 of 12);
+        @include shift(2);
+        @include omega;
+    }
+    .flickr-search__input {
+        padding: 0.3125em 0;
+    }
+}
