@@ -4,17 +4,19 @@
 }
 
     .flickr-carousel__wrapper {
-        @include outer-container(61.25em);
+        @include outer-container(61.25em); // 960px
         @include pad(0 default);
+        position: relative;
     }
 
         .flickr-carousel__list {
             list-style: none;
             padding: 0;
+            border-bottom: 0.3125em solid $site-borders;
         }
 
             .flickr-carousel__item {
-
+                text-align: center;
             }
 
                 .flickr-carousel__image {
@@ -22,20 +24,49 @@
                     width: 100%;
                 }
 
-        .flickr-carousel__controls {}
+                .flickr-carousel__acreditation {
+                    width: 100%;
+                }
+                    .flickr-carousell__credit {
+                        margin: 1em auto;
+                        letter-spacing: 0.03125em; // half a pixel
+                    }
 
-            .flickr-carousel__control {}
+        .flickr-carousel__controls {
+            @extend %cf;
+            position: absolute;
+            width: 100%;
+            height: 0; // set to zero so elements on slider can be selected
+            overflow: visible;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            margin-top: -3.75em;
+        }
+            .flickr-carousel__control {
+                background-image: url('../img/arrows.png');
+            }
 
-            .flickr-icon__left {}
+            .flickr-icon__left {
+                float: left;
+                margin-left: 4.3%;
+                background-position: 0 -70px; width: 60px; height: 60px;
+                &:hover {
+                    background-position: 0 0; width: 60px; height: 60px;
+                }
+            }
+            .flickr-icon__right {
+                float: right;
+                margin-right: 4.3%;
+                background-position: 0 -210px; width: 60px; height: 60px;
+                &:hover {
+                    background-position: 0 -140px; width: 60px; height: 60px;
+                }
+            }
 
-                .flickr-carousel__screen-readers {}
-
-// 1x
-.sprite-left-arrow-hover{ background-position: 0 0; width: 60px; height: 60px; }
-.sprite-left-arrow{ background-position: 0 -70px; width: 60px; height: 60px; }
-.sprite-right-arrow-hover{ background-position: 0 -140px; width: 60px; height: 60px; }
-.sprite-right-arrow{ background-position: 0 -210px; width: 60px; height: 60px; }
-
+                .flickr-carousel__screen-readers {
+                    @include screen-reader-text;
+                }
 
 // 2x
 .sprite-left-arrow-hover2x{ background-position: 0 0; width: 120px; height: 120px; }

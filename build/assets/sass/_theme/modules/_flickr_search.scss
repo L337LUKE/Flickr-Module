@@ -1,5 +1,5 @@
 .flickr-seach {
-    margin-top: 1em;
+    margin-top: 1em; // 16px
 }
     .flickr-search__label {
         @include screen-reader-text; // see mixins
@@ -22,16 +22,16 @@
 
         color: $form--type;
         border-radius: 0;
-        text-indent: 0.3125em;
-        padding: 0.5em 0;
-        border: 0.0625em solid $form--border;
+        text-indent: 0.3125em; // 5px
+        padding: 0.5em 0; // 8px
+        border: 0.0625em solid $form--border; // 1px
         @include transition(all, 250ms, ease-in-out);
         text-align: left;
         width: 100%;
         background-image: url('../img/search.png');
         background-repeat: no-repeat;
         background-position: 97.5% center;
-        background-size: 20px;
+        background-size: 1.25em; // 20px
 
         @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi){
             background-image: url('../img/search@2x.png');
@@ -44,14 +44,14 @@
         }
     }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 37.5em) {  // 600px
     .flickr-search {
-        margin-top: 2.8125em;
+        margin-top: 2.8125em; // 45px
         @include span-columns(5 of 12);
         @include shift(2);
         @include omega;
     }
     .flickr-search__input {
-        padding: 0.3125em 0;
+        padding: 0.3125em 0; // 5px
     }
 }

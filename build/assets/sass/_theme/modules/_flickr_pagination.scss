@@ -1,38 +1,41 @@
 .flickr-pagination {
-    @include outer-container(61.25em);
+    @include outer-container(61.25em); // 980px
     @include pad(0 default);
-    @extend %cf;
-    border-bottom: 0.375em solid $site-borders;
-    margin-bottom: 5em;
+    margin-bottom: 5em; // 80px
     text-align: center;
 }
-    .flickr-pagination__list {
-        display: inline-block;
-        padding: 0;
+
+    .flickr-pagination__inner {
         @extend %cf;
-        list-style: none;
+        border-bottom: 0.3125em solid $site-borders; // 6px
     }
-        .flickr-pagination__item {
-            float: left;
+        .flickr-pagination__list {
+            display: inline-block;
+            padding: 0;
+            @extend %cf;
+            list-style: none;
         }
-            .flickr-pagination__link {
-                color: $type-main-colour;
-                padding: 0 0.3125em;
-                text-decoration: none;
-                @include transition(color, 250ms, ease-in-out);
-                font-size: 1.5em;
-                &:hover {
-                    color: $type-alt-colour;
-                    text-decoration: underline;
+            .flickr-pagination__item {
+                float: left;
+            }
+                .flickr-pagination__link {
+                    color: $type-main-colour;
+                    padding: 0 0.3125em; // 5px
+                    text-decoration: none;
+                    @include transition(color, 250ms, ease-in-out);
+                    font-size: 1.5em; // 24px
+                    &:hover {
+                        color: $type-alt-colour;
+                        text-decoration: underline;
+                    }
                 }
-            }
 
-            .flickr-pagination__first, .flickr-pagination__prev,
-            .flickr-pagination__next, .flickr-pagination__last {
-                padding: 0 0.4375em;
-            }
+                .flickr-pagination__first, .flickr-pagination__prev,
+                .flickr-pagination__next, .flickr-pagination__last {
+                    padding: 0 0.4375em; // 7px
+                }
 
-@media screen and (min-width: 43.75em) {
+@media screen and (min-width: 43.75em) { // 700px
     .flickr-pagination {
         text-align: left;
     }
@@ -40,11 +43,11 @@
             float: right;
         }
                 .flickr-pagination__link {
-                    padding: 0 0.1875em;
-                    font-size: 1em;
+                    padding: 0 0.1875em; // 3px
+                    font-size: 1em; // 16px
                 }
                 .flickr-pagination__first, .flickr-pagination__prev,
                 .flickr-pagination__next, .flickr-pagination__last {
-                    padding: 0 0.3125em;
+                    padding: 0 0.3125em; // 5px
                 }
 }

@@ -1,27 +1,31 @@
 .mast-head__inner {
-    @include outer-container(61.25em);
-    @include pad(1.0625em default 0 default);
+    @include outer-container(61.25em); // 980px
+    @include pad(1.0625em default 0 default); // 17px
     text-align: center;
 }
 
-.logo {
-    color: $type-alt-colour;
-    font-family: serif, georgia, palatino;
-    font-size: 3.25em;
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
-    line-height: 1;
+.brand {
+    display: block;
+    text-decoration: none;    
 }
+    .brand__logo {
+        color: $type-alt-colour;
+        font-family: serif, georgia, palatino;
+        font-size: 3.25em; // 52px
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+    }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 37.5em) { // 600px
     .mast-head__inner {
-        @include pad(2.1875em default 0 default);
+        @include pad(2.1875em default 0 default); // 35px
         text-align: left;
     }
 
-    .logo {
-        font-size: 6.25em;
+    .brand__logo {
+        font-size: 6.25em; // 100px
         @include span-columns(5 of 12);
     }
 }
