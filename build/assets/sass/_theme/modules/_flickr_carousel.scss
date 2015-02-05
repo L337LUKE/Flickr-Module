@@ -9,67 +9,59 @@
         position: relative;
     }
 
-        .flickr-carousel__list {
-            list-style: none;
-            padding: 0;
-            border-bottom: 0.3125em solid $site-borders;
+        .flickr-carousel__item {
+            text-align: center;
         }
 
-            .flickr-carousel__item {
+            .flickr-carousel__image {
+                max-width: 100%;
+                width: 100%;
+            }
+
+            .flickr-carousel__accompaniments {
                 text-align: center;
+                position: relative;
+                width: 100%;
+                border-bottom: 0.3125em solid $site-borders;
             }
-
-                .flickr-carousel__image {
-                    max-width: 100%;
-                    width: 100%;
+                .flickr-carousel__credit {
+                    margin: 0 auto;
+                    padding: 1em 0;
+                    letter-spacing: 0.03125em; // half a pixel
                 }
 
-                .flickr-carousel__acreditation {
-                    width: 100%;
+            .flickr-carousel__controls {
+                @extend %cf;
+                position: absolute;
+                width: 100%;
+                height: 0; // set to zero so elements on slider can be selected
+                overflow: visible;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+                margin-top: -3.75em;
+            }
+                .flickr-carousel__control {
+                    background-image: url('../img/arrows.png');
                 }
-                    .flickr-carousell__credit {
-                        margin: 1em auto;
-                        letter-spacing: 0.03125em; // half a pixel
+
+                .flickr-carousel__prev {
+                    float: left;
+                    margin-left: 4.3%;
+                    background-position: 0 -70px; width: 60px; height: 60px;
+                    &:hover {
+                        background-position: 0 0; width: 60px; height: 60px;
                     }
-
-        .flickr-carousel__controls {
-            @extend %cf;
-            position: absolute;
-            width: 100%;
-            height: 0; // set to zero so elements on slider can be selected
-            overflow: visible;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 0;
-            margin-top: -3.75em;
-        }
-            .flickr-carousel__control {
-                background-image: url('../img/arrows.png');
-            }
-
-            .flickr-icon__left {
-                float: left;
-                margin-left: 4.3%;
-                background-position: 0 -70px; width: 60px; height: 60px;
-                &:hover {
-                    background-position: 0 0; width: 60px; height: 60px;
                 }
-            }
-            .flickr-icon__right {
-                float: right;
-                margin-right: 4.3%;
-                background-position: 0 -210px; width: 60px; height: 60px;
-                &:hover {
-                    background-position: 0 -140px; width: 60px; height: 60px;
-                }
-            }
-
-                .flickr-carousel__screen-readers {
-                    @include screen-reader-text;
+                .flickr-carousel__next {
+                    float: right;
+                    margin-right: 4.3%;
+                    background-position: 0 -210px; width: 60px; height: 60px;
+                    &:hover {
+                        background-position: 0 -140px; width: 60px; height: 60px;
+                    }
                 }
 
-// 2x
-.sprite-left-arrow-hover2x{ background-position: 0 0; width: 120px; height: 120px; }
-.sprite-left-arrow2x{ background-position: 0 -135px; width: 120px; height: 120px; }
-.sprite-right-arrow-hover2x{ background-position: 0 -270px; width: 120px; height: 120px; }
-.sprite-right-arrow2x{ background-position: 0 -405px; width: 120px; height: 120px; }
+                    .flickr-carousel__screen-readers {
+                        @include screen-reader-text;
+                    }
