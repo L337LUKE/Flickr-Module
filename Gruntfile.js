@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         },
         // Lint js
         jshint: {
-            files: ['Gruntfile.js', 'dist/js/main.js']
+            files: ['Gruntfile.js', 'dist/js/main.min.js']
         },
         // uglify/minify
         uglify: {
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
             dist: {
                 files: {
                     //dest, src
-                    'dist/main.min.js' : 'dist/js/main.js'
+                    'dist/js/main.min.js' : 'dist/js/main.js'
                 }, // files
             } //my_target
         }, //uglify
@@ -88,7 +88,7 @@ module.exports = function(grunt) {
                 tasks: ['concat', 'jshint', 'uglify']
             }, //scripts
             copy: {
-              files: ['build/*.html', 'build/assets/js/main.js'],
+              files: ['build/index.html'],
               tasks: ['copy:main', 'copy:scripts']
             },
         }, //watch
