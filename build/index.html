@@ -20,9 +20,9 @@
                     <h1 class="brand__logo">Photos</h1>
                 </a>
                 <div class="flickr-search">
-                    <form id="flickrSearch">
+                    <form id="flickrSearch" role="search">
                         <label class="flickr-search__label" for="flickr_search">Search</label>
-                        <input class="flickr-search__input flickr-search__js" id="flickr_search" name="flickr_sarch" type="search" placeholder="search..." value="search..." />
+                        <input class="flickr-search__input flickr-search--js" id="flickr_search" name="flickr_sarch" type="search" placeholder="search..." value="search..." />
                     </form>
                 </div>
             </div>
@@ -33,8 +33,32 @@
                 <div class="flickr-carousel__wrapper">
                     <div class="flickr-caousel__item">
                         <img class="flickr-carousel__image" src="img/example-slider.jpg" alt="Photographer credit: Alex de Mora" />
-                        <aside class="flickr-carousel__accompaniments">
+                        <aside class="flickr-carousel__accompaniments" role="complementary">
                             <p class="flickr-carousel__credit">Photographer credit: Alex de Mora</p>
+
+                            <div class="flickr-social">
+                                <p class="flickr-social__share">Share</p>
+                                <div class="flickr-social__boundingBox">
+                                    <ul class="flickr-social__popup">
+                                        <li class="flickr-social__platform">
+                                            <a href="/" class="social__share">
+                                                <img src="/img/tweet.jpg" alt="Tweet this!" title="Twitter"/>
+                                            </a>
+                                        </li>
+                                        <li class="flickr-social__platform">
+                                            <a href="/" class="social__share">
+                                                <img src="/img/like.jpg" alt="Post this to Facebook!" title="Facebook"/>
+                                            </a>
+                                        </li>
+                                        <li class="flickr-social__platform">
+                                            <a href="/" class="social__share">
+                                                <img src="/img/gplus.jpg" alt="Share to your circle!" title="Google+"/>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
                         </aside>
                     </div>
                     <nav class="flickr-carousel__controls">
@@ -48,22 +72,49 @@
                 </div>
             </section>
 
-            <div class="flickr-gallery">
-                <ul class="flickr-gallery__list flickr-gallery__js">
+            <div class="flickr-gallery flickr-gallery__fallback--js">
+                <ul class="flickr-gallery__list flickr-gallery--js">
                     <!-- dynamic content -->
                 </ul>
             </div>
-        </main>
 
-        <nav class="flickr-pagination" role="navigation">
-            <div class="flickr-pagination__inner">
-                <a class="flickr-pagination__item flickr-pagination__last">&lt;&lt;</a>
-                <a class="flickr-pagination__item flickr-pagination__prev">&lt;</a>
-                <ul class="flickr-pagination__list flickr-pagination__js"></ul>
-                <a class="flickr-pagination__item flickr-pagination__next">&gt;&gt;</a>
-                <a class="flickr-pagination__item flickr-pagination__last">&gt;</a>
-            </div>
-        </nav>
+            <nav class="flickr-pagination" role="navigation">
+                <div class="flickr-pagination__inner">
+                    <ul class="flickr-pagination__list">
+                        <li class="flickr-pagination__item flickr-pagination__last">
+                            <a class="flickr-pagination__link">&lt;&lt;</a>
+                        </li>
+                        <li class="flickr-pagination__item flickr-pagination__prev">
+                            <a class="flickr-pagination__link">&lt;</a>
+                        </li>
+                        <li class="flickr-pagination__item">
+                            <a class="flickr-pagination__link">1</a>
+                        </li>
+                        <li class="flickr-pagination__item">
+                            <a class="flickr-pagination__link">2</a>
+                        </li>
+                        <li class="flickr-pagination__item">
+                            <a class="flickr-pagination__link">3</a>
+                        </li>
+                        <li class="flickr-pagination__item">
+                            <a class="flickr-pagination__link">4</a>
+                        </li>
+                        <li class="flickr-pagination__item">
+                            <a class="flickr-pagination__link">5</a>
+                        </li>
+                        <li class="flickr-pagination__item">
+                            <a class="flickr-pagination__link">6</a>
+                        </li>
+                        <li class="flickr-pagination__item flickr-pagination__last">
+                            <a class="flickr-pagination__link">&gt;</a>
+                        </li>
+                        <li class="flickr-pagination__item flickr-pagination__next">
+                            <a class="flickr-pagination__link">&gt;&gt;</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </main>
 
         <script src="js/main.min.js"></script>
     </body>
