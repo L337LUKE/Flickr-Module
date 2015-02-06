@@ -5,7 +5,20 @@
         @include screen-reader-text; // see mixins
     }
     .flickr-search__input {
-        /* Some initial reset code */
+        color: $form--type;
+        border-radius: 0;
+        text-indent: 0.3125em; // 5px
+        padding: 0.875em 0; // 8px
+        border: 0.0625em solid $form--border; // 1px
+        @include transition(all, 250ms, ease-in-out);
+        text-align: left;
+        width: 100%;
+        background-image: url('../img/search.png');
+        background-repeat: no-repeat;
+        background-position: 97.5% center;
+        background-size: 1.25em; // 20px
+
+        /* reset for various things */
         -webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
         -webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
         -moz-box-sizing:    content-box;
@@ -19,19 +32,6 @@
             border: 0;
             padding: 0;
         }
-
-        color: $form--type;
-        border-radius: 0;
-        text-indent: 0.3125em; // 5px
-        padding: 0.5em 0; // 8px
-        border: 0.0625em solid $form--border; // 1px
-        @include transition(all, 250ms, ease-in-out);
-        text-align: left;
-        width: 100%;
-        background-image: url('../img/search.png');
-        background-repeat: no-repeat;
-        background-position: 97.5% center;
-        background-size: 1.25em; // 20px
 
         @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi){
             background-image: url('../img/search@2x.png');
@@ -51,7 +51,7 @@
         @include shift(2);
         @include omega;
     }
-    .flickr-search__input {
-        padding: 0.3125em 0; // 5px
-    }
+        .flickr-search__input {
+            padding: 0.3125em 0; // 5px
+        }
 }

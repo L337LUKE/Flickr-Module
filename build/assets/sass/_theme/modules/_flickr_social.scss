@@ -1,0 +1,54 @@
+.flickr-social {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    background-color: $site-alt;
+    &:hover {
+        overflow: visible;
+        .flickr-social__boundingBox {
+            opacity: 1;
+       }
+       .flickr-social__share {
+           color: $type-alt-colour;
+       }
+    }
+}
+    .flickr-social__share {
+        font-size: 0.9375em;
+        padding: 0.75em;
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    .flickr-social__boundingBox {
+        opacity: 0;
+        right: 0;
+        position: absolute;
+        bottom: 2em;
+        font-family: "Trebuchet MS", Helvetica, sans-serif;
+    }
+
+        .flickr-social__popup {
+            display: inline-block;
+            width: 12em;
+            background-color: $site-alt;
+            margin-bottom: 1.2em;
+            padding: 0.25em 0.5em;
+            @include transition(opacity, 250ms, ease-in-out);
+            &:after {
+                content: "";
+                width: 0;
+                height: 0;
+                border-left: 0.625em solid transparent;
+                border-right: 0.625em solid transparent;
+                border-top: 0.625em solid $site-alt;
+                position: absolute;
+                right: 1.5em;
+                bottom: 0.625em;
+            }
+        }
+
+            .flickr-social__platform {
+                display: inline-block;
+            }
