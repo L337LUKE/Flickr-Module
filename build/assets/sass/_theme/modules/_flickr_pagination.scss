@@ -19,6 +19,7 @@
                 float: left;
             }
                 .flickr-pagination__link {
+                    cursor: pointer;
                     color: $type-main-colour;
                     padding: 0 0.3125em; // 5px
                     text-decoration: none;
@@ -33,6 +34,9 @@
                 .flickr-pagination__first, .flickr-pagination__prev,
                 .flickr-pagination__next, .flickr-pagination__last {
                     padding: 0 0.4375em; // 7px
+                    .flickr-pagination__link {
+                        padding: 0;
+                    }
                 }
 
 @media screen and (min-width: 43.75em) { // 700px
