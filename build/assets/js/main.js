@@ -7,9 +7,9 @@
         secret : 'c45369f080495c35',
         userid : '129226618@N03',
         // get page els
-        container : document.querySelector('.flickr-gallery__js'),
-        pagination : document.querySelector('.flickr-pagination__js'),
-        input  : document.querySelector('.flickr-search__js'),
+        container : document.querySelector('.flickr-gallery--js'),
+        input  : document.querySelector('.flickr-search--js'),
+        fallback : document.querySelector('.flickr-gallery__fallback--js'),
     };
 
     // HELPERS
@@ -25,29 +25,23 @@
     };
 
     var handleRequest = function(url, callback) {
-        var xhr;
         // setup request
-        xhr = new XMLHttpRequest();
-        // when ready fire check function
-        xhr.onreadystatechange = checkReady;
-        // check function
-        function checkReady(){
-            // make sure ready state is less than 4
-            if(xhr.readyState < 4) {
-                return;
-            }
-            // make sure status is ok
-            if(xhr.status !== 200) {
-                console.log("There's a problem here");
-                return;
-            }
-            // good to go, fire callback
-            if(xhr.readyState === 4) {
-                callback(xhr.response);
-            }
-        }
+        var xhr = new XMLHttpRequest();
+        // open get to url
         xhr.open("GET", url, true);
+        // when ready fire check function
+        xhr.onreadystatechange = function() {
+            if (this.readyState === 4) {
+                if (this.status >= 200 && this.status < 400) {
+                    var data = JSON.parse(this.response);
+                    callback(data);
+                } else {
+                    // something went wrong
+                }
+            }
+        };
         xhr.send();
+        xhr = null;
     };
 
     // BUILD FUNCTIONS
@@ -95,20 +89,33 @@
 
         // run ajax function
         handleRequest(url, function(xhr) {
-            // parse json
-            var parsed = JSON.parse(xhr);
 
             removeChilds(globals.container);
 
-            // loop through response
-            for (var i=0; i<parsed.photos.photo.length; i++){
-                // create variables to iterate on and store imgsrc/href
-                var photo = parsed.photos.photo[i];
-                var imgsrc = 'https://farm'+photo.farm+'.staticflickr.com/'+photo.server+'/'+photo.id+'_'+photo.secret+'_m.jpg';
-                var ahref = 'https://www.flickr.com/photos/'+photo.owner+'/'+photo.id+'';
-                // fire the build gallery function with img/a src
-                buildGallery(imgsrc, ahref);
+            if (xhr.photos.photo.length !== 0) {
+                // remove error message
+                var childNode = document.querySelector('.flickr-gallery__fallbackMessage');
+                if (childNode && childNode.parentNode) {
+                    childNode.parentNode.removeChild(childNode);
+                }
+                // loop through response
+                for (var i=0; i<xhr.photos.photo.length; i++){
+                    // create variables to iterate on and store imgsrc/href
+                    var photo = xhr.photos.photo[i];
+                    var imgsrc = 'https://farm'+photo.farm+'.staticflickr.com/'+photo.server+'/'+photo.id+'_'+photo.secret+'_m.jpg';
+                    var ahref = 'https://www.flickr.com/photos/'+photo.owner+'/'+photo.id+'';
+                    // fire the build gallery function with img/a src
+                    buildGallery(imgsrc, ahref);
+                }
+            } else {
+
+                var heading = document.createElement('h2');
+                var text =  document.createTextNode('No Search Results, try again');
+                heading.className = 'flickr-gallery__fallbackMessage';
+                heading.appendChild(text);
+                globals.fallback.appendChild( heading );
             }
+
         });
 
         // stop the form from searching
