@@ -8,6 +8,7 @@
     .flickr-pagination__inner {
         @extend %cf;
         border-bottom: 0.3125em solid $site-borders; // 6px
+        text-align: center;
     }
         .flickr-pagination__list {
             display: inline-block;
