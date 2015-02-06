@@ -25,7 +25,7 @@
                     padding: 0 0.3125em; // 5px
                     text-decoration: none;
                     @include transition(color, 250ms, ease-in-out);
-                    font-size: 1.5em; // 24px
+                    font-size: 1.25em; // 24px
                     &:hover {
                         color: $type-alt-colour;
                         text-decoration: underline;
